@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <meta charset="ISO-8859-1">
+<title>Insert title here</title> -->
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+
+</head>
+<body>
+	  <div style="background-color: #6495ED; font-family: Calibri;">
+<h2 style=" color: white;">Mina</h2>
+</div>
+<div ng-app="MinaApp" ng-controller="showStoryCtrl">
+<p> Story</p>
+<br/>
+<p >{{author}}</p>
+<!--  <p ng-model="title">{{title}}</p> ng-app="MinaApp" ng-controller="showStoryCtrl"  ng-init="author=''"
+<p ng-model="body">{{ body }}</p> -->
+ <!--{{ x.author }}   ng-model="author"
+{{ x.title }}
+{{ x.body }} -->
+<br/>
+<br/>
+<br/>
+</p>
+</div>
+<div style=" background-color: #6495ED; height: 25px" >
+</div>
+ <script>
+    var app = angular.module('MinaApp', []);
+    app.controller('showStoryCtrl', function($scope, $http){
+	 //$http.get("http://www.w3schools.com/angular/customers.php")
+	 //.success(function (response){$scope.author = response;}) http://3e3447.ngrok.com
+	//$scope.author = "CEO";
+    $http.get("C:/Users/Cuthbert/workspace2/AngularJS_Tests/WebContent/customers.php")
+     .success(function(response){ $scope.author=response;})//.error(function(data, status){ $scope.author=data.status; })
+    });
+
+</script>
+
+</body>
+</html>

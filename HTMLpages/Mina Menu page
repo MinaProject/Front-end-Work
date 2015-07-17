@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+
+<body>
+<div style="background-color: #6495ED; font-family: Calibri;">
+<h2>Mina Menu</h2>
+</div>
+
+<!-- <hr/>  width: 931px;       style="background-color: #F0F8FF;"-->
+<p style="font-family: Calibri;"><a href="Mina story page">Add User Story</a></p>
+
+<p style="font-family: Calibri;"><a href="Storydisplay.html">View User Story</a></p>
+
+<p style="font-family: Calibri;"><a href="Mina Login page.html">Sign Out</a></p>
+
+<div style="background-color: #6495ED; height: 25px;"">
+</div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- meta charset="ISO-8859-1">
+<title>Insert title here</title> -->
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+
+</head>
+<body  >
+	<div style="background-color: #6495ED; font-family: Calibri;">
+<h2 style=" color: white;">Mina</h2>
+</div>
+
+
+      <form action="" name="theForm" ng-app="MinaApp" ng-controller="validCtrl">
+	    <div>
+	    <p>Please fill in your user account details</p>
+	    <table>
+	  <tr>
+	  
+	  <td>Name:&nbsp;</td> <td><input type="text" name="thename" ng-model="thename">
+	   <span style="color:red" ng-show="theForm.thename.$dirty && theForm.thename.$invalid">
+	   <span ng-show="theForm.thename.$error.required">Name is required.</span>
+	   </span>
+	  </td>
+	  </tr>
+	  
+	  <tr>
+	  <td>Surname: </td><td><input type="text" name="surname" ng-model="surname">
+	   <span style="color:red" ng-show="theForm.surname.$dirty && theForm.surname.$invalid">
+	   <span ng-show="theForm.surname.$error.required">Surname is required.</span>
+	   </span>
+	   </td>
+	  </tr>
+
+	  <tr>
+	  <td>Age    : </td> <td><input type="number" name="age" ng-model="age">
+	   <span style="color:red" ng-show="theForm.age.$invalid">
+	   <span ng-show="theForm.age.$error.required">Age is invalid</span>
+	   </span>
+	   </td>
+	  </tr>
+
+	  <tr>
+	  <td>Username: </td><td><input type="text" name="user" ng-model="user">
+	   <span style="color:red" ng-show="theForm.user.$dirty && theForm.user.$invalid">
+	   <span ng-show="theForm.user.$error.required">Username is required.</span>
+	   </span>
+	   </td>
+	  </tr>
+
+	  <tr>
+	  <td>Password: </td><td><input type="password" name="passwd1" ng-model="passwd1">
+	  <span style="color:red" ng-show="theForm.passwd1.$dirty">
+	  <span ng-show="theForm.passwd1.$error.required">Password is required.</span>
+	  </span>
+	  </td>
+	  </tr>
+	  
+	  <tr>
+	  <td>Retype Password: </td><td><input type="password" name="passwd2" ng-model="passwd2">
+	  <span style="color:red" ng-show="theForm.passwd2.$dirty">
+	  <span ng-show="theForm.passwd2.$error.required">Password is required.</span>
+	  </span>
+	  </td>
+	  </tr>
+
+	  </table>
+	  <button type="submit" ng-disabled="error || incomplete" > <!--"theForm.user.$dirty && theForm.user.$invalid ||
+	  theForm.passwd.$dirty" || theForm.passwd.$dirty"> -->
+	  Sign In
+	  </button>
+	    </div>
+      </form>
+	</div>
+	<br/>
+	<div style=" background-color: #6495ED; height: 25px" >
+	</div>
+      <script>
+	  var app = angular.module('MinaApp', []);
+	  app.controller('validCtrl', function($scope/*, $http*/) {  
+	      $scope.user = '';
+	      //$scope.email = 'john.doe@gmail.com';
+	      $scope.passw1 = '';
+	      $scope.passw2 = '';
+	      $scope.thename = '';
+          $scope.surname = '';
+	      $scope.edit = true;
+	      $scope.error = false;
+	      $scope.incomplete = true;
+	      
+              $scope.$watch('thename',function() {$scope.test();});
+	      $scope.$watch('surname',function() {$scope.test();});
+              $scope.$watch('user',function() {$scope.test();});
+	
+	      $scope.$watch('passw1',function() {$scope.test();});
+	      $scope.$watch('passw2',function() {$scope.test();});
+	      
+	      $scope.test = function() {
+	      if ($scope.passw1 !== $scope.passw2) {
+		  $scope.error = true;
+	      } else {
+		      $scope.error = false;
+	      }
+	        $scope.incomplete = false;
+	      //if( ($scope.thename.length == 0) || ($scope.surname.length == 0) || ($scope.user.length == 0)   || ($scope.passw1.length == 0) || ($scope.passw2.length == 0) )
+		  	if(!$scope.thename.length || !$scope.surname.length || !$scope.passw1.length || !$scope.passw2.length || !$scope.user.length )
+	        {
+			    $scope.incomplete = true;
+		    }
+	      }
+	      
+	     /* $scope.submit = function(){
+	    	 if($scope.passw1 !== $scope.passw2)
+	    	 {
+	    		 //Error notification
+	    	 }
+	    	 else//Save the info to the database if online, else save to an offline storage location
+	    	 	 //Also return to login page
+	    	 {  */
+	    		 /*$http({
+	    			 url: 'http://3e3447.ngrok.com', 
+	    			 method: "POST",
+	    			 data: {  
+	    				 category: 1,
+	    				 author: 'Codie',
+	    				 title: 'Miss',
+	    				 body: 'Welcome to Praekelt'
+	    			 }
+	    		 }).success(function (data, status, headers, config) {
+	    			  
+	    		  });
+	    			 
+	    		*/
+	    	/*}
+	      }*/
+	  });
+	   
+      </script>
+
+</body>
+</html>
+
+<!--
+&http.({
+	 url:'https://gist.github.com/82f2110efa9271a73ffb.git',
+	 method: "POST",
+	 data: { author: 'Codie',
+		 title: 'Miss',
+		 body: 'Welcome to Praekelt'},
+	headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  }).success(function (data, status, headers, config) {
+  
+  });
+ -->

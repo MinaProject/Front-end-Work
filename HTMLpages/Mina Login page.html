@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js">
+</script>
+
+<body>
+<div style="background-color: #6495ED; font-family: Calibri;">
+<h2 style=" color: white;">Mina</h2>
+</div>
+
+
+<form action="" name="theForm" ng-controller="validCtrl" ng-app="MinaApp">
+      <div>
+	  <p>
+	  Username: <input type="text" name="user" ng-model="user" required>
+	   <span style="color:red" ng-show="theForm.user.$dirty && theForm.user.$invalid">
+	   <span ng-show="theForm.user.$error.required">Username is required.</span>
+	   </span>
+	  </p>
+	  
+	  <p>
+	  
+	  Password: <input type="password" ng-model="passwd" required>
+	  <span style="color:red" ng-show="theForm.passwd.$dirty">
+	  <span ng-show="theForm.passwd.$error.required">Password is required.</span>
+	  </span>
+	  </p>
+	  
+	  <button type="submit" ng-disabled="theForm.user.$dirty && theForm.user.$invalid ||
+  theForm.passwd.$dirty"> <!-- ||
+  theForm.passwd.$dirty"> -->
+	  Sign In
+	  </button>
+      </div>
+</form>
+<br/>
+<div style=" background-color: #6495ED; height: 25px" >
+	</div>
+
+<script>
+var app = angular.module('MinaApp', []);
+app.controller('validCtrl', function($scope) {
+    $scope.user = '';
+    $scope.passwd = '';
+    
+    /*$http({
+	    			 url: 'http://3e3447.ngrok.com', 
+	    			 method: "POST",
+	    			 data: {  
+	    				 category: 1,
+	    				 author: 'Codie',
+	    				 title: 'Miss',
+	    				 body: 'Welcome to Praekelt'
+	    			 }
+	    		 }).success(function (data, status, headers, config) {
+	    			  
+	    		  });*/
+});
+</script>
+
+
+
+</body>
+
+
+
+<!--
+<script>
+var app = angular.module('myApp', []);
+app.controller('customersCtrl', function($scope, $http) {
+    $http.get("http://www.w3schools.com/angular/customers.php")
+    .success(function(response) {$scope.names = response.records;});
+});
+</script>
+
+style="background-color: #F0F8FF;"
+-->
+
+</html>
+
+<!--
+localStorage.setItem('todos', JSON.stringify($scope.todos));
+	};
+-->

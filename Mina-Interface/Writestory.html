@@ -1,0 +1,59 @@
+<div ng-controller="CreateStoryCtrl">
+    <form style="height: 936px;" action="" name="aForm"  >
+    
+    
+    <br/>
+    <br/>
+    <br/>
+    <h2 style="color: #191947; font-size: 42pt; font-family: Calibri;">Create a Story</h2>
+	  <table style="font-size: 35pt; font-family: Calibri;">
+	 <tr>
+	 <td>
+	     Title: </td><td> <input type="text" style="font-family: Calibri; font-size: 28pt;" ng-model="theForm.title" required />
+	 	  <p>{{theForm.title}}</p> 
+	 </td>
+	 </tr>
+	 
+	 <tr>
+	 <td>
+	      Author: </td>  <td><input type="text" name="author" style="font-family: Calibri; font-size: 28pt;" ng-model="theForm.author" required />
+	      
+	 </td>
+	 </tr>
+	 
+	 <tr>
+	<td>
+	     Subject: </td>  <td style="font-size: 28pt; font-family: Calibri;"><select style="height: 58px; width: 374px; font-size: 28pt; border-color: gray;" ng-model="theForm.category" >
+			  <option value="1">Love</option>
+			  <option value="2">Health</option>
+			  <option value="3">Sex</option>
+			  <option value="4">Relationship</option>
+		      </select>
+		       <p>{{theForm.category}}</p>
+	 </td>
+	 </tr>
+	 
+	 <tr>
+	 <td>
+	      Body: </td>  <td><textarea rows="4" cols="35" style="font-size: 24pt; font-family: Calibri;" ng-model="theForm.body">
+		    </textarea>
+	 </td>
+	 </tr>
+	 </table>
+	 
+	  <pre>TheForm = {{theForm | json}}</pre>
+	 
+	
+<button ng-click = "thesubmit()">sss</button>
+</form>
+
+<br/>
+
+<div class="active" style="background-color: #191947; height: 175px; font-family: Calibri; font-size: 42pt;">
+	<a ng-click="backtomenu()" style="color: white;">Back</a>
+	</div>
+
+</div>
+
+
+

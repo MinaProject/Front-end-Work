@@ -1,0 +1,16 @@
+{
+  "name": "webcontent",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Minatest.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6"
+  }
+}

@@ -1,0 +1,68 @@
+<div ng-controller="ViewStoryCtrl">
+
+<div style=" overflow-y : scroll; overflow-x: scroll; height: 936px;" >
+
+
+<div style=" overflow-y : scroll; overflow-x: scroll; height: 100%;" ng-hide="topicview">
+<ul class="nav nav-pills nav-stacked" ng-model="stories">
+<li style="background-color: #B2B2D1; color: navy; font-size: 60pt; font-family: Calibri; font_weight: bold; height: 20%;" >
+
+<!-- <a>{{stor}}</a>  <h2 style="color: navy; font-size: larger; font-family: Calibri;"> Choose Category </h2>  height: 200px; ng-repeat="x in love"-->
+Choose Category
+<div id="hd" class="hidden"></div>
+</li>
+<li style="background-color: #EBF5FF; font-size: 50pt" ng-model ="love">
+
+<a id="lovlnk" ng-click="toggle()" style="color: #00005C;">Love</a>
+<div id="love" ng-hide="myVar" style="background-color: white; font-size: 32pt;"  >
+<h2 style="font-size: 35pt;">Story Titles</h2>
+<p ng-model="loves">{{loves}}</p>
+</div>
+<div ng-hide="myVar" ng_repeat="x in love" style="font-family: Calibri; font-size: 28pt;">
+<a id="{{x.uuid}}" ng-model="stor" ng-value="x.uuid" name="uuid" ng-click="displaystory(x.uuid)">{{x.title}}</a>
+</div>
+
+</li>
+
+<li style="background-color: #FFFFFF ; font-size: 50pt"><a id="sxxlnk" ng-click="toggle1()" >Sex</a>
+<div id="sxx" ng-hide="myVar1" style="background-color: white; font-size: 32pt;">
+<h2 style="font-size: 35pt;">Story Titles</h2>
+</div>
+<div ng-hide="myVar1" ng_repeat="x in sex" style="font-family: Calibri; font-size: 28pt;">
+<a id="{{x.uuid}}" ng-model="stor" ng-value="x.uuid" name="uuid" ng-click="displaystory(x.uuid)">{{x.title}}</a>
+</div>
+</li>
+
+
+
+<li style="background-color: #EBF5FF; font-size: 50pt"><a id="relatelnk" ng-click="toggle3()" style="color:#00005C;">Relationships</a>
+<div id="relate" ng-hide="myVar3" style="background-color: white; font-size: 32pt;">
+<h2 style="font-size: 35pt;">Story Titles</h2>
+</div>
+<div ng-hide="myVar3" ng_repeat="x in relate" style="font-family: Calibri; font-size: 28pt;">
+<a id="{{x.uuid}}" ng-model="stor" ng-value="x.uuid" name="uuid" ng-click="displaystory(x.uuid)">{{x.title}}</a>
+</div>
+</li>
+</ul>
+</div>
+<br/>
+
+
+<p style="font-family: Calibri; font-size: 35pt; font-weight: bold; color: #00005C;"  ng-hide="storyview" ng-repeat="x in story" >{{x.title}}</p>
+<p style="font-family: Calibri; font-size: 28pt; color: #6EB893;"  ng-hide="storyview" ng-repeat="y in story" >{{y.body}}</p>
+
+
+
+
+<br/>
+<br/>
+<br/>
+</p>
+</div>
+
+
+<div class="active" style="background-color: #191947; height: 175px; font-family: Calibri; font-size: 42pt;">
+<a  style="color: white;" ng-hide="hidelnk1" ng-click="backtomenu()">Back</a><a ng-click="StorytoTopics()" ng-hide="hidelnk2" style="color: white;" >Back</a>
+</div>
+
+</div>
